@@ -22,7 +22,7 @@ const getXeTaiNan = async (req, res) => {
                 if (img.startsWith('http')) {
                   return img; 
                 }else{
-                    return `http://localhost:5000/uploads/${img}` }
+                    return `https://findcaraccident.onrender.com/uploads/${img}` }
               });
               if (userId) {
                 await LichSuTimKiem.create({
