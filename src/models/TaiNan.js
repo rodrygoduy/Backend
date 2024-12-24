@@ -38,7 +38,7 @@ TaiNanDB.statics.getTaiNan = async function () {
                 if (img.startsWith('http')) {
                     return img;
                 }
-                return `${process.env.BASE_URL || 'http://localhost:5000'}/uploads/${img}`;
+                return `${process.env.BASE_URL || 'https://findcaraccident.onrender.com'}/uploads/${img}`;
             });
             return {
                 ...taiNan._doc,
@@ -75,7 +75,7 @@ TaiNanDB.statics.getTaiNanChoDuyet= async function () {
                 if (img.startsWith('http')) {
                     return img;
                 }
-                return `${process.env.BASE_URL || 'http://localhost:5000'}/uploads/${img}`;
+                return `${process.env.BASE_URL || 'https://findcaraccident.onrender.com'}/uploads/${img}`;
             });
             return {
                 ...taiNan._doc,
