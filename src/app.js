@@ -13,7 +13,7 @@ const DBdir = path.dirname(decodeURI(new URL(import.meta.url).pathname.replace(/
 dotenv.config({ path: path.resolve(DBdir, '../.env') });
 const app = express()
 app.use(cors({ 
-    origin: 'http://localhost:3000', 
+    origin: 'https://frontend-drft.onrender.com/', 
     credentials: true, 
   }));
 app.use(bodyParser.json()); 
