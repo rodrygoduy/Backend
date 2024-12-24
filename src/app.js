@@ -12,8 +12,14 @@ import userRouter from './routers/userRouter.js';
 const DBdir = path.dirname(decodeURI(new URL(import.meta.url).pathname.replace(/^\/([A-Z]:\/)/i, '$1')));
 dotenv.config({ path: path.resolve(DBdir, '../.env') });
 const app = express()
+app.use(cors({ 
+    origin: 'http://localhost:3000', 
+    credentials: true, 
+  }));
 app.use(bodyParser.json()); 
 app.use(cookieParser());
+
+
 connectDB()
 
 const __filename = fileURLToPath(import.meta.url);
@@ -26,9 +32,6 @@ app.use(express.json())
 app.use('/home', router);
 app.use('/auth',authrouter)
 app.use('/quanli',userRouter)
-
-
-
 
 
 
