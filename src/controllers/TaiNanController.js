@@ -25,11 +25,14 @@ const getXeTaiNan = async (req, res) => {
                     return `https://findcaraccident.onrender.com/uploads/${img}` }
               });
               if (userId) {
+                res.status(200).json("có người dùng, có id",{userId})
                 await LichSuTimKiem.create({
                     userId,
                     bienSoTimKiem: bienSo,
                     tainanTimKiem: `Tai nạn: ${taiNan.moTa}`,
                 });
+            }else{
+              res.status(500).json("khoongt ìm thấy người dùng")
             }
             return res.status(200).json({xe,taiNan})
         }

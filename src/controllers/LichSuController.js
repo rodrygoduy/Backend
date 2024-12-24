@@ -26,7 +26,7 @@ const getLichSu = async (req, res) => {
     console.log("Id nguoi dung",req.user.id)
     const history = await LichSuTimKiem.find({ userId: req.user.id }).sort({  searchedAt: -1, });
     if (history.length === 0) {
-      return res.status(404).json("Không có lịch sử nào được tìm thấy");
+      return res.status(200).json("Không có lịch sử nào được tìm thấy");
     }
     return res.status(200).json(history);
   } catch (err) {
